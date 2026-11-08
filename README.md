@@ -87,17 +87,5 @@ Invalid input returns `422` with the field name and the reason.
 - Local and regional holiday flags are matched by date only, so they apply to all 54 stores.
 - The earthquake window (16 Apr to 16 May 2016) is an assumption.
 
-## Roadmap
-
-- [ ] Lag and rolling features for real forecasting
-- [ ] LightGBM baseline and comparison with the ANN
-- [ ] SHAP explanations for each prediction
-- [ ] Store-level matching for local and regional holidays
-
-## Credits
-
-Data from the Kaggle competition [Store Sales: Time Series Forecasting](https://www.kaggle.com/competitions/store-sales-time-series-forecasting), Corporación Favorita. Built by Hemant.
-
-
 ## And I'll provide(Attached) my personal digital notes about Data Preprocessing , EDA and all stufff
 - Notes Link --> https://drive.google.com/file/d/1L78z-hTVKSDA4ixztdsy2xcdZpComtLp/view?usp=drive_link
