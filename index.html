@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian | Store sales forecast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><span class="brand">Meridian</span><span class="note">Store sales forecast</span></header>
+
+<main class="layout">
+  <section class="panel scenario" aria-labelledby="title">
+    <h1 id="title">Forecast a day of sales</h1>
+    <p class="lead">Choose a store, a product family and a date. The model estimates how many units will sell.</p>
+
+    <form id="form">
+      <div class="row">
+        <div class="field"><label for="date">Date</label><input id="date" type="date" min="2013-01-01" max="2017-08-15" required></div>
+        <div class="field"><label for="store">Store <small>1 to 54</small></label><input id="store" type="number" min="1" max="54" inputmode="numeric" required></div>
+      </div>
+      <div class="field"><label for="family">Product family</label><select id="family" required></select></div>
+      <div class="row">
+        <div class="field"><label for="promo">Items on promotion <small>0 to 750</small></label><input id="promo" type="number" min="0" max="750" inputmode="numeric" required></div>
+        <div class="field"><label for="tx">Transactions <small>0 to 8,500</small></label><input id="tx" type="number" min="0" max="8500" inputmode="numeric" required></div>
+      </div>
+      <button id="go" type="submit">Predict sales</button>
+      <p id="error" class="error" role="alert"></p>
+    </form>
+  </section>
+
+  <div class="right">
+    <section id="stage" class="panel stage" aria-live="polite">
+      <div class="empty">
+        <p class="label">Predicted sales</p>
+        <p class="ghost">0.00</p>
+        <p class="muted">Fill in the scenario and select Predict sales.</p>
+      </div>
+      <div class="result">
+        <p class="label">Predicted sales</p>
+        <p class="value"><span id="value">0.00</span> <span class="unit">units</span></p>
+        <p id="summary" class="muted"></p>
+      </div>
+    </section>
+
+    <section id="hist-wrap" class="panel history" hidden>
+      <div class="hist-head"><h2>This session</h2><button id="clear" type="button" class="link">Clear history</button></div>
+      <ul id="history"></ul>
+    </section>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
