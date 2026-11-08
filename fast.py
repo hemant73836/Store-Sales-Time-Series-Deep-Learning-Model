@@ -77,6 +77,8 @@ class inp(BaseModel):
             d = dt_date.fromisoformat(v)      # "YYYY-MM-DD" format check
         except ValueError:
             raise ValueError('Date format should be in YYYY-MM-DD')
+        if not dt_date(2013,1,1) <= d <=dt_date(2017,8,15):
+            raise ValueError("Date should between (2013-01-01) to (2017-08-15)")
         return v
 
 @app.post('/predict')
