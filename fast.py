@@ -8,7 +8,7 @@ from typing import Literal
 import pandas as pd
 from datetime import date as dt_date
 from tensorflow import keras
-BASE = Path(__file__).parent
+BASE = Path("/Users/hemantbisht/Documents/sale/store-sales-time-series-forecasting/Sales.ipynb").parent
 all_cols= joblib.load('features_cols.joblib')
 model = keras.models.load_model(BASE/'sales_ann.keras')
 pre = joblib.load(BASE/ 'preprocessor.joblib')
@@ -77,8 +77,6 @@ class inp(BaseModel):
             d = dt_date.fromisoformat(v)      # "YYYY-MM-DD" format check
         except ValueError:
             raise ValueError('Date format should be in YYYY-MM-DD')
-        if not dt_date(2013, 1, 1) <= d <= dt_date(2017, 8, 15):
-            raise ValueError("wrong")
         return v
 
 @app.post('/predict')
