@@ -8,7 +8,7 @@ from typing import Literal
 import pandas as pd
 from datetime import date as dt_date
 from tensorflow import keras
-BASE = Path("/Users/hemantbisht/Documents/sale/store-sales-time-series-forecasting/Sales.ipynb").parent
+BASE = Path(__file__).parent
 all_cols= joblib.load('features_cols.joblib')
 model = keras.models.load_model(BASE/'sales_ann.keras')
 pre = joblib.load(BASE/ 'preprocessor.joblib')
